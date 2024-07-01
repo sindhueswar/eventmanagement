@@ -48,8 +48,8 @@ Adjust DB_URI and SECRET as per your MongoDB setup and JWT secret.
 **3.Install frontend dependencies:**
     ```bash
     
-    cd client
-    npm install
+     cd client
+     npm install
     
 Running the Application
 **4.Start the backend server:**
@@ -57,7 +57,9 @@ Running the Application
 In the project root directory:
     ```bash
     
-           npm start
+    npm start
+
+
 This will start the Node.js server using Express.
 
 Start the frontend development server:
