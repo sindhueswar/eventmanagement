@@ -23,7 +23,7 @@ const Admin = () => {
   }, []);
 
   return (
-    <section className="card">
+    <section className="card max-w-lg">
     
 
       {loading && (

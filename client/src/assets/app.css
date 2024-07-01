@@ -7,7 +7,7 @@
     @apply w-8 h-8 rounded-md hover:bg-indigo-600 grid place-items-center;
   }
   .card {
-    @apply bg-white px-6 py-10 rounded-lg shadow-lg max-w-screen-lg mx-auto;
+    @apply bg-white px-6 py-10 rounded-lg shadow-lg max-w-80 mx-auto;
   }
   .title {
     @apply font-bold mb-8 text-2xl;
