@@ -6,16 +6,15 @@ import { EventContext } from "../../contexts/EventContext";
 import Alert from "../../Components/Alert";
 
 const Create = () => {
-  // Use event context
+
   const { events, setEvents } = useContext(EventContext);
 
-  // Use navigate hook
+
   const navigate = useNavigate();
 
-  // Error state
   const [error, setError] = useState(null);
 
-  // Form data state
+ 
   const [name, setTitle] = useState("");
   const [date, setDate] = useState("");
 
@@ -23,13 +22,13 @@ const Create = () => {
     e.preventDefault();
 
     try {
-      // Create a new event
+   
       const data = await createEvent(name, date);
-      // Update the events state
+    
       console.log("handleCreate", data);
       setEvents([...events, data.event]);
 
-      // Navigate to dashboard
+     
       navigate("/dashboard");
     } catch (error) {
       setError(error.message);

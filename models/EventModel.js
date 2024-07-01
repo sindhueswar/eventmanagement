@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-// Creating event schema using Mongoose Schema class
+
 const EventSchema = new mongoose.Schema({
     user: {
         type: mongoose.Schema.Types.ObjectId,
@@ -18,7 +18,7 @@ const EventSchema = new mongoose.Schema({
 }, { timestamps: true })
 
 
-// Creating a model from schema
+
 const Event = mongoose.model("Event", EventSchema)
 
 export default Event

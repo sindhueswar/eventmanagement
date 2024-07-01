@@ -4,21 +4,21 @@ import { Link, Outlet, useNavigate } from "react-router-dom";
 import { UserContext } from "../contexts/UserContext";
 
 const Layout = () => {
-  // Use navigate hook
+
   const navigate = useNavigate();
 
-  // Grab the User global state
+
   const { user, setUser } = useContext(UserContext);
 
-  // Handle logout
+
   const handleLogout = () => {
     if (confirm("Confirm Logout?")) {
-      // Reset the User state
+   
       setUser({ email: null, events: [] });
-      // Remove the items from local storage
+  
       localStorage.removeItem("email");
       localStorage.removeItem("token");
-      // Navigate to Admin page
+  
       navigate("/");
     }
   };

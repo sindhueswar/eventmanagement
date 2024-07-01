@@ -1,6 +1,6 @@
-/* eslint-disable react/prop-types */
+
 const Event = ({ event, children }) => {
-  // console.log(event)
+
   return (
     <div className="mb-6">
 

@@ -6,36 +6,35 @@ import Alert from "../../Components/Alert";
 
 
 const Register = () => {
-  // Use user context
+
   const { setUser } = useContext(UserContext)
 
-  // Use navigate hook
   const navigate = useNavigate()
 
-  // Error state
+ 
   const [error, setError] = useState(null);
 
-  // Form data state
+ 
   const [formData, setFormData] = useState({
     email: "",
     password: "",
     passwordConfirm: "",
   });
 
-  // Handle login
+
   const handleRegister = async (e) => {
     e.preventDefault();
 
     try {
-      // Register the user
+ 
       await registerUser(
         formData.email,
         formData.password,
         formData.passwordConfirm
       );
-      // Update the user state
+
       setUser({email: formData.email, events: []})
-      // Navigate to dashboard
+     
       navigate('/dashboard')
     } catch (error) {
       setError(error.message);

@@ -1,10 +1,9 @@
 import { useState } from "react";
 
-/* eslint-disable react/prop-types */
+
 const Success = ({ msg }) => {
   const [show, setShow] = useState(true);
 
-  // Remove this component after 2 seconds
   setTimeout(() => setShow(false), 2000);
 
   return (

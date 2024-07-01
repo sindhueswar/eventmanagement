@@ -1,4 +1,4 @@
-/**************************** Login User  **********************************/
+
 const loginUser = async (email, password) => {
   if (!email || !password) {
     throw Error("All fields are required");
@@ -24,7 +24,6 @@ const loginUser = async (email, password) => {
   return data;
 };
 
-/**************************** Register User  ********************************/
 const registerUser = async (email, password, passwordConfirm) => {
   if (!email || !password || !passwordConfirm) {
     throw Error("All fields are required");

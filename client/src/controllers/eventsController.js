@@ -1,4 +1,4 @@
-/**************************** Get all events  ********************************/
+
 const getEvents = async () => {
   const res = await fetch("/api/events");
   const data = await res.json();
@@ -10,7 +10,6 @@ const getEvents = async () => {
   return data;
 };
 
-/**************************** Get user events  ******************************/
 const getUserEvents = async () => {
   const res = await fetch("/api/events/user", {
     headers: {
@@ -27,7 +26,6 @@ const getUserEvents = async () => {
   return data;
 };
 
-/**************************** Create events  ******************************/
 const createEvent = async (name, date) => {
   // console.log("createEvent", name, date);
   if (!name || !date) {
@@ -54,7 +52,7 @@ const createEvent = async (name, date) => {
   return data;
 };
 
-/**************************** Delete events  ******************************/
+
 const deleteEvent = async (_id) => {
   const res = await fetch(`/api/events/${_id}`, {
     method: "DELETE",
@@ -72,7 +70,6 @@ const deleteEvent = async (_id) => {
   return data;
 };
 
-/**************************** Update events  ******************************/
 const updateEvent = async (_id, name, date) => {
   if (!name || !date) {
     throw Error("All fields are required");

@@ -8,36 +8,36 @@ import Alert from "../../Components/Alert";
 import Success from "../../Components/Success";
 
 const Dashboard = () => {
-  // Use user context
+
   const { user, setUser } = useContext(UserContext);
 
-  // Loading state
+ 
   const [loading, setLoading] = useState(true);
 
-  // Error state
+
   const [error, setError] = useState(null);
 
-  // Success state
+  
   const [success, setSuccess] = useState(null);
 
   useEffect(() => {
     setTimeout(async () => {
-      // Grab user's events
+
       const { userEvents, email } = await getUserEvents();
-      // Update user state
+
       setUser({ email, events: userEvents });
-      // Remove the loading
+     
       setLoading(false);
     }, 500);
   }, []);
 
-  // Handle delete event
+
   const handleDelete = async (_id) => {
     if (confirm("Confirm delete?")) {
       try {
-        // Delete the event
+      
         const data = await deleteEvent(_id);
-        // Set the success message
+     
         setSuccess(data.success);
       } catch (error) {
         setError(error.message);
@@ -65,7 +65,7 @@ const Dashboard = () => {
                 <Link
                   className="fa-solid fa-pen-to-square nav-link text-green-500 hover:bg-green-200"
                   name="Update"
-                  state={event} // Send the events to the Update page
+                  state={event}
                   to="/update"
                 ></Link>
                 <button

@@ -1,6 +1,5 @@
 import mongoose from "mongoose";
 
-// Creating event schema using Mongoose Schema class
 const UserSchema = new mongoose.Schema(
   {
     email: {
@@ -16,7 +15,7 @@ const UserSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-// Creating a model from schema
+
 const User = mongoose.model("User", UserSchema);
 
 export default User;

@@ -4,20 +4,18 @@ import { EventContext } from "../../contexts/EventContext";
 import Event from "../../Components/Event";
 
 const Admin = () => {
-  // Use event context
+
   const { events, setEvents } = useContext(EventContext);
 
-  // Loading state
   const [loading, setLoading] = useState(true);
 
-  // Grab all the events on page load
   useEffect(() => {
     setTimeout(async () => {
-      // Grab all events
+
       const data = await getEvents();
-      // Update events state
+ 
       setEvents(data.events);
-      // Remove the loading
+
       setLoading(false);
     }, 1000);
   }, []);

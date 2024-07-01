@@ -6,29 +6,26 @@ import { UserContext } from "../../contexts/UserContext";
 import Alert from "../../Components/Alert";
 
 const Login = () => {
-  // Use user context
+ 
   const { setUser } = useContext(UserContext)
 
-  // Use navigate hook
   const navigate = useNavigate()
 
-  // Error state
   const [error, setError] = useState(null);
 
-  // Form data state
+ 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  // Handle login
   const handleLogin = async (e) => {
     e.preventDefault();
 
     try {
-      // Login the user
+   
       await loginUser(email, password);
-      // Update the user state
+  
       setUser({email, events: []})
-      // Navigate to dashboard
+   
       navigate('/dashboard')
     } catch (error) {
       setError(error.message);
