@@ -50,7 +50,7 @@ const Dashboard = () => {
   return (
     <section className="card">
       
-      <h3>{user.email}</h3>
+      <h1 className="title">{user.email}</h1>
       {loading && (
         <i className="fa-solid fa-spinner animate-spin text-3xl text-center block"></i>
       )}

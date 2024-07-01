@@ -31,7 +31,7 @@ const Admin = () => {
       {events &&
         events.map((event) => (
           <div key={event._id}>
-            <Event event={event} />
+            <Event event={event} className="align-items-center"/>
           </div>
         ))}
     </section>

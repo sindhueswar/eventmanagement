@@ -4,21 +4,17 @@ import { Link, Outlet, useNavigate } from "react-router-dom";
 import { UserContext } from "../contexts/UserContext";
 
 const Layout = () => {
-
   const navigate = useNavigate();
-
 
   const { user, setUser } = useContext(UserContext);
 
-
   const handleLogout = () => {
     if (confirm("Confirm Logout?")) {
-   
       setUser({ email: null, events: [] });
-  
+
       localStorage.removeItem("email");
       localStorage.removeItem("token");
-  
+
       navigate("/");
     }
   };
@@ -26,14 +22,14 @@ const Layout = () => {
   return (
     <>
       <header className="bg-indigo-500 text-white">
-        <nav className="flex items-center justify-between p-4 max-w-screen-lg mx-auto">
+        <nav className="flex items-center justify-around p-4 max-w-screen-lg mx-auto">
           {user.email ? (
             <Link title="Admin" to="/">
-              <h1 className="title">User DashBoard</h1>
+              <h1 className="title mb-0">User DashBoard</h1>
             </Link>
           ) : (
             <Link title="Admin" to="/">
-              <h1 className="title">Admin Panel</h1>
+              <h1 className="title mb-0">Admin Panel</h1>
             </Link>
           )}
           {user.email ? (
@@ -43,11 +39,7 @@ const Layout = () => {
                 to="/create"
                 className="fa-solid fa-circle-plus nav-link"
               ></Link>
-              <Link
-                title="Admin Panel"
-                to="/"
-                className="fa-solid fa-circle-user nav-link"
-              ></Link>
+              
               <button
                 title="Logout"
                 onClick={handleLogout}
