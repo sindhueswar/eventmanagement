@@ -30,7 +30,7 @@ app.get("*", (req, res) =>
 
 // Connecting to MongoDB using Mongoose
 mongoose
-  .connect(process.env.DB_URI, { dbName: "demo_db" })
+  .connect(process.env.DB_URI, { dbName: "eventmanager" })
   .then(() => {
     console.log("connected to DB successfully");
 
